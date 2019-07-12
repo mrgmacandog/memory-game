@@ -2,7 +2,7 @@ import React from "react";
 
 function ClickImage() {
     return (
-        <div>
+        <div className="card col-md-3">
             Inside ClickImage component
         </div>
     );

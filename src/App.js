@@ -4,11 +4,16 @@ import './App.css';
 import ClickImage from './components/ClickImage';
 
 function App() {
-  return (
-    <div className="App">
-	  <ClickImage />
-    </div>
-  );
+	return (
+		<div className="container App">
+			<div className="row">
+				<ClickImage />
+				<ClickImage />
+				<ClickImage />
+				<ClickImage />
+			</div>
+		</div>
+	);
 }
 
 export default App;
