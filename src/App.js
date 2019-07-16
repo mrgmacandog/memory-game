@@ -1,15 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ClickImage from './components/ClickImage';
-import friends from "./friends.json";
+import React from "react";
+import "./App.css";
+import ClickImage from "./components/ClickImage";
+import characters from "./characters.json";
 
 function App() {
 	return (
 		<div className="container App">
 			<div className="row">
-				{friends.map(friend =>
-					<ClickImage name={friend.name} image={friend.image}/>
+				{characters.map(character =>
+					<ClickImage name={character.name} image={character.image}/>
 				)}
 			</div>
 		</div>
