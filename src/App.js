@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import ClickImage from "./components/ClickImage";
 import characters from "./characters.json";
+import Header from "./components/Header";
+import ClickImage from "./components/ClickImage";
 
 class App extends Component {
 
@@ -74,19 +75,25 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="container App">
-				<div className="row">
-					{characters.map(character =>
-						<ClickImage
-							key={character.id}
-							id={character.id}
-							name={character.name}
-							image={character.image}
-							updateScore={this.updateScore}
-						/>
-					)}
+			<React.Fragment >
+				<Header 
+					currScore={this.state.currScore}
+					highScore={this.state.highScore}
+				/>
+				<div className="container App">
+					<div className="row">
+						{characters.map(character =>
+							<ClickImage
+								key={character.id}
+								id={character.id}
+								name={character.name}
+								image={character.image}
+								updateScore={this.updateScore}
+							/>
+						)}
+					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		);
 	}
 }
