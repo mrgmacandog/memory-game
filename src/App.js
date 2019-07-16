@@ -8,16 +8,51 @@ class App extends Component {
 	// App state
 	state = {
 		currScore: 0,
-		highScore: 0
+		highScore: 0,
+		charactersRemaining: characters
 	}
-
+	
 	/**
 	 * Updates the currScore depending on the id
 	 * @param {int} id character id
 	 */
-	updateScore(id) {
-		alert(`You chose ${id}`);
+	updateScore = id => {
+		// alert(`You chose ${id}`);
+
+		// If id has been chosen already
+		if (this.checkIfChosen(id)) {
+			// Reset game
+			alert("Game resetting...");
+		} else {
+			// Add id to charactersRemaining
+			// console.log(this.state.charactersRemaining);
+
+			// Increase currScore and increase highScore if currScore > highScore
+		}
 	};
+
+	/**
+	 * Checks to see if the id has already been chosen
+	 * @param {int} id character id
+	 */
+	checkIfChosen = id => {
+		// Filter out chosen id
+		let charactersRemaining = this.state.charactersRemaining.filter(character => character.id !== id);
+
+		console.log(`charactersRemaining.length: 		   ${charactersRemaining.length}`);
+		console.log(`this.state.charactersRemaining.length: ${this.state.charactersRemaining.length}`);
+
+		if (charactersRemaining.length === this.state.charactersRemaining.length) {
+			// Characters has already been chosen
+			return true;
+		} else {
+			// Update state of charactersRemaining
+			this.setState({ charactersRemaining: charactersRemaining });
+
+			// Return false if id has not been chosen
+			return false;
+		}
+	}
 
 	render() {
 		return (
