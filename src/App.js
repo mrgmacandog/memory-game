@@ -87,7 +87,7 @@ class App extends Component {
 					currScore={this.state.currScore}
 					highScore={this.state.highScore}
 				/>
-				<div className="container App">
+				<div className="container">
 					<div className="row">
 						{/* Shuffle all the characters and then return a ClickImage for each of them */}
 						{this.shuffleArray(characters).map(character =>
